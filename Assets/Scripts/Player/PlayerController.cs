@@ -31,5 +31,6 @@ namespace Assets.Scripts.Player
             var speed = Speed;
             _rigidbody.velocity = moveDirection.normalized * speed;
         }
+
     }
 }

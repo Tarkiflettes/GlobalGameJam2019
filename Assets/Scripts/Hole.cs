@@ -6,9 +6,11 @@ namespace Assets.Scripts
     public class Hole : MonoBehaviour
     {
 
+        private Type _type;
+
         private void Start()
         {
-        
+            _type = GetComponent<Type>();
         }
         
         private void Update()
@@ -21,18 +23,14 @@ namespace Assets.Scripts
             var playerController = collision.gameObject.GetComponent<PlayerController>();
             if (playerController == null)
                 return;
-            if (SameType(playerController) == false)
+            var typePlayerController = playerController.GetComponent<Type>();
+            if (_type.Equals(typePlayerController))
                 return;
             OpenForPlayer(playerController);
         }
 
         private void OpenForPlayer(PlayerController playerController)
         {
-        }
-
-        private bool SameType(PlayerController playerController)
-        {
-            return true;
         }
 
     }
