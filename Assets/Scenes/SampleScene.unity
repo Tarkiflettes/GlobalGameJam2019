@@ -439,6 +439,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8401008582062170349, guid: 927e5d63f0fd8344e8832123d2a22af1,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 927e5d63f0fd8344e8832123d2a22af1, type: 3}
 --- !u!1001 &3613986977603523795
@@ -590,6 +595,20 @@ PrefabInstance:
     - target: {fileID: 5766209986331932946, guid: ae830b755a5db444fa5d0575b808025a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766209986331932944, guid: ae830b755a5db444fa5d0575b808025a,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766209986331932944, guid: ae830b755a5db444fa5d0575b808025a,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1119560421, guid: ae830b755a5db444fa5d0575b808025a, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

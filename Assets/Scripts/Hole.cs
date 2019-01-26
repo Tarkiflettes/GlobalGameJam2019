@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Player;
+﻿using System;
+using Assets.Scripts.Player;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -12,25 +13,22 @@ namespace Assets.Scripts
         {
             _type = GetComponent<Type>();
         }
-        
-        private void Update()
-        {
-        
-        }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider collision)
         {
             var playerController = collision.gameObject.GetComponent<PlayerController>();
             if (playerController == null)
                 return;
             var typePlayerController = playerController.GetComponent<Type>();
-            if (_type.Equals(typePlayerController))
+            if (_type.Equals(typePlayerController) == false)
                 return;
-            OpenForPlayer(playerController);
+            Open(playerController);
+
         }
 
-        private void OpenForPlayer(PlayerController playerController)
+        private void Open(PlayerController playerController)
         {
+            Debug.Log("koukou");
         }
 
     }

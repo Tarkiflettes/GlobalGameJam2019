@@ -8,7 +8,7 @@ namespace Assets.Scripts.Manager
 
         [Header("Manager")]
         public static GameManager Instance;
-        public static AssetsManager AssetsManager;
+        public AssetsManager AssetsManager;
 
         [Header("Score")]
         public int Platforms;
