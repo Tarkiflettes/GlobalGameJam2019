@@ -27,9 +27,11 @@ namespace Assets.Scripts.Player
 
         private void Move(float axisHorizontal, float axisVertical)
         {
-            var moveDirection = new Vector3(axisHorizontal, 0, axisVertical);
-            var speed = Speed;
-            _rigidbody.velocity = moveDirection.normalized * speed;
+            var moveDirection = new Vector3(axisHorizontal, 0, axisVertical).normalized;
+            var velocity = _rigidbody.velocity;
+            velocity.x = moveDirection.x * Speed;
+            velocity.z = moveDirection.z * Speed;
+            _rigidbody.velocity = velocity;
         }
 
     }

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections;
 using Assets.Scripts.Player;
 using UnityEngine;
 
@@ -6,6 +6,8 @@ namespace Assets.Scripts
 {
     public class Hole : MonoBehaviour
     {
+
+        public float PushForce = 100f;
 
         private Type _type;
 
@@ -28,7 +30,21 @@ namespace Assets.Scripts
 
         private void Open(PlayerController playerController)
         {
-            Debug.Log("koukou");
+            var playerCollider = playerController.GetComponent<Collider>();
+            if (playerCollider != null)
+                playerCollider.enabled = false;
+            StartCoroutine(NextPlatform(playerController));
+        }
+
+        private IEnumerator NextPlatform(PlayerController playerController)
+        {
+            var playerRigidbody = playerController.GetComponent<Rigidbody>();
+            if (playerRigidbody != null)
+                playerRigidbody.AddForce(new Vector3(0, -10, 0), ForceMode.Impulse);
+            yield return new WaitForSeconds(0.5f);
+            var playerCollider = playerController.GetComponent<Collider>();
+            if (playerCollider != null)
+                playerCollider.enabled = true;
         }
 
     }
